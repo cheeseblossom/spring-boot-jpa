@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import playground.cheeseblossom.jpa.domain.Sample;
 import playground.cheeseblossom.jpa.domain.SampleRepository;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -20,5 +21,9 @@ public class SampleService {
             .text(UUID.randomUUID().toString().substring(0, 10))
             .build();
     sampleRepository.save(s);
+  }
+
+  public List<String> findText() {
+    return sampleRepository.findText();
   }
 }

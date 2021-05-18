@@ -16,6 +16,7 @@ public class IndexController {
   public ModelAndView index() {
     ModelAndView mv = new ModelAndView("index");
     sampleService.save();
+    mv.addObject("list", sampleService.findText());
     return mv;
   }
 }
